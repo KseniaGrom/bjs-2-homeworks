@@ -22,8 +22,8 @@ class AlarmClock {
     }
 
     getCurrentFormattedTime() {
-        let date = Date();
-        let timeString = date.split(" ")[4];
+        let date = new Date();
+        let timeString = date.toString().split(" ")[4];
         return timeString.slice(0, 5);
     }
 
