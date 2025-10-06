@@ -23,8 +23,11 @@ class AlarmClock {
 
     getCurrentFormattedTime() {
         let date = new Date();
-        let timeString = date.toString().split(" ")[4];
-        return timeString.slice(0, 5);
+        let hours = date.getHours();
+        let minutes = date.getMinutes();
+        let formatHours = hours < 10 ? "0" + hours : hours;
+        let formatMinutes = minutes < 10? "0" + minutes : minutes;
+        return formatHours + ":" + formatMinutes;
     }
 
     start() {
